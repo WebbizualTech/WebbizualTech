@@ -1,11 +1,13 @@
-// App.tsx
 import { HashRouter as Router } from 'react-router-dom';
 import HomePage from './Pages/HomePage';
 
 function App() {
   return (
     <Router>
-      <HomePage />
+      <div>
+        {/* <h1 style={{ color: 'red' }}>App loaded</h1> */}
+        <HomePage />
+      </div>
     </Router>
   );
 }

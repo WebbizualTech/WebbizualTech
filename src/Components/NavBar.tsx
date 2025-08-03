@@ -9,7 +9,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
-import Logo from '../assets/WebbizualLogo.png';
+import Logo from '../assets/WebbizualLogo.webp';
 
 const pages = [
     { label: 'Home', id: 'home' },

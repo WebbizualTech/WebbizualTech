@@ -1,8 +1,8 @@
 import { Box, Typography, Button, Container, Grid } from '@mui/material';
 
-import LukesLobster from '../assets/LukesLobster.jpeg';
-import StylehubMakeover from '../assets/Stylhubmakeover.png';
-import AglowShineMakeover from '../assets/aglowShineMakeover.jpeg';
+import LukesLobster from '../assets/LukesLobster.webp';
+import StylehubMakeover from '../assets/Stylhubmakeover.webp';
+import AglowShineMakeover from '../assets/aglowShineMakeover.webp';
 
 const projects = [
     {

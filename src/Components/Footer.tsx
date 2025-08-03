@@ -9,7 +9,7 @@ import {
     Link
 } from '@mui/material';
 
-import Logo from '../assets/WebbizualLogo.png';
+import Logo from '../assets/WebbizualLogo.webp';
 
 const FooterSection = () => {
     // const theme = useTheme();

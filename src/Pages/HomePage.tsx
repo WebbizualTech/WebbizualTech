@@ -3,16 +3,16 @@ import {
     Box, Typography, Grid, Card, Button, Container, Divider,
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import heroImage from "../assets/LandingPageImage.jpg";
+import heroImage from "../assets/LandingPageImage.webp";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 // import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
-import WebDevService from '../assets/WebDevService.jpg';
-import MobileAppService from '../assets/mobileAppService.jpg';
-import GraphicDesignService from '../assets/GraphicDesignService.jpg';
-import EcomService from '../assets/EcomService.jpg';
-import backgroundPattern from '../assets/16367386_rm380-12.jpg';
-import portfolioImage from '../assets/work-image-1-768x512.jpg';
+import WebDevService from '../assets/WebDevService.webp';
+import MobileAppService from '../assets/mobileAppService.webp';
+import GraphicDesignService from '../assets/GraphicDesignService.webp';
+import EcomService from '../assets/EcomService.webp';
+import backgroundPattern from '../assets/16367386_rm380-12.webp';
+import portfolioImage from '../assets/work-image-1-768x512.webp';
 import Testimonial from '../Components/Testimonial';
 import Footer from '../Components/Footer';
 import AboutSection from '../Components/About';

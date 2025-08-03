@@ -5,7 +5,7 @@ const services = [
     {
         title: 'UI/UX Design',
         description: ['Website Design', 'Responsive Design', 'Mobile App Design'],
-        image: '/images/uiux.jpg',
+        image: '/images/uiux.webp',
         detailed: true,
     },
     {
@@ -16,19 +16,19 @@ const services = [
             'WordPress Development',
             'Shopify Development',
         ],
-        image: '/images/webdev.jpg',
+        image: '/images/webdev.webp',
         detailed: true,
     },
     {
         title: 'Graphic Designing',
         description: ['Poster Design', 'Product Image Design', 'Photoshop Retouch'],
-        image: '/images/graphic.jpg',
+        image: '/images/graphic.webp',
         detailed: true,
     },
     {
         title: 'Ecommerce Catalogue',
         description: ['Product Listing', 'Product Optimization'],
-        image: '/images/ecommerce.jpg',
+        image: '/images/ecommerce.webp',
         detailed: true,
     },
 ];

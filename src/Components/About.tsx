@@ -4,7 +4,7 @@ import {
     Grid,
     Typography,
 } from '@mui/material';
-import AboutMainImg from '../assets/AboutMainImage.jpg';
+import AboutMainImg from '../assets/AboutMainImage.webp';
 
 const AboutSection = () => {
     return (
