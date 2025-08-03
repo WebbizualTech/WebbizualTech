@@ -4,7 +4,7 @@ import StarIcon from '@mui/icons-material/Star';
 
 const testimonials = [
     {
-        quote: `Webbizual delivered excellent results on multiple Amazon Seller Store projects. Communication was smooth, tasks were completed promptly, and their skills were top-notch. We look forward to working with them again.`,
+        quote: `Webbizual built an exceptional selling platform website with smooth navigation and seamless product integration. Their work was timely, communication clear, and the results exceeded our expectations. We look forward to working with them again.`,
         name: 'Lukes Lobster',
         title: 'Website Developer',
         rating: 5
@@ -83,15 +83,15 @@ const TestimonialSlider: React.FC = () => {
                 {testimonials.map((item, index) => (
                     <Grid size={{ md: 4, sm: 6, xs: 12 }} key={index}>
                         <Paper
-                            elevation={8}
+                            elevation={10}
                             sx={{
-                                width: '100%',
+                                width: '93%',
                                 minHeight: 360,
                                 display: 'flex',
                                 flexDirection: 'column',
                                 justifyContent: 'space-between',
                                 borderRadius: 4,
-                                p: 3,
+                                p: 2,
                                 backgroundColor: '#fff',
                             }}
                         >

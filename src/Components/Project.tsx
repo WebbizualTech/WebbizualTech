@@ -1,11 +1,7 @@
-import React, { useRef } from 'react';
-import { Box, Typography, Button, Container } from '@mui/material';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Swiper as SwiperType } from 'swiper';
-import { Pagination } from 'swiper/modules';
+import React from 'react';
+import { Box, Typography, Button, Container, Grid } from '@mui/material';
 
 import LukesLobster from '../assets/LukesLobster.jpeg';
-import ElevatedTransmission from '../assets/ElevatedTransmission.jpeg';
 import StylehubMakeover from '../assets/Stylhubmakeover.png';
 import AglowShineMakeover from '../assets/aglowShineMakeover.jpeg';
 
@@ -23,12 +19,6 @@ const projects = [
         href: 'https://dribbble.com/webbizualtech',
     },
     {
-        category: 'Web Development',
-        title: 'Elevated Transmission',
-        image: ElevatedTransmission,
-        href: 'https://elevatedtransmission.com',
-    },
-    {
         category: 'Graphic Design',
         title: 'StyleHub Makeover',
         image: StylehubMakeover,
@@ -37,42 +27,12 @@ const projects = [
 ];
 
 const ProjectSlider = () => {
-    const swiperRef = useRef<SwiperType | null>(null);
-    const prevMouseY = useRef(0);
-
-    const handleMouseEnter = (e: React.MouseEvent<HTMLDivElement>) => {
-        const currentY = e.clientY;
-        const direction = currentY > prevMouseY.current ? 'down' : 'up';
-
-        if (direction === 'down') {
-            swiperRef.current?.slideNext();
-        } else {
-            swiperRef.current?.slidePrev();
-        }
-
-        prevMouseY.current = currentY;
-    };
-
     return (
-        <Box sx={{ width: '100%', py: 2 }} onMouseEnter={handleMouseEnter}>
+        <Box sx={{ width: '100%', py: 6 }}>
             <Container maxWidth="xl">
-                <Swiper
-                    onSwiper={(swiper: SwiperType) => {
-                        swiperRef.current = swiper;
-                    }}
-                    speed={600}
-                    spaceBetween={30}
-                    slidesPerView={1.2}
-                    pagination={{ clickable: true }}
-                    breakpoints={{
-                        480: { slidesPerView: 1 },
-                        768: { slidesPerView: 2.2 },
-                        1200: { slidesPerView: 3 },
-                    }}
-                    modules={[Pagination]}
-                >
+                <Grid container spacing={4}>
                     {projects.map((project, index) => (
-                        <SwiperSlide key={index}>
+                        <Grid size={{ md: 4, sm: 6, xs: 12 }} key={index}>
                             <Box
                                 sx={{
                                     position: 'relative',
@@ -80,7 +40,7 @@ const ProjectSlider = () => {
                                     overflow: 'hidden',
                                     width: '100%',
                                     aspectRatio: '4 / 3',
-                                    mt: 3,
+                                    mt: 1,
                                 }}
                             >
                                 <a
@@ -153,9 +113,9 @@ const ProjectSlider = () => {
                                     </Box>
                                 </a>
                             </Box>
-                        </SwiperSlide>
+                        </Grid>
                     ))}
-                </Swiper>
+                </Grid>
             </Container>
         </Box>
     );

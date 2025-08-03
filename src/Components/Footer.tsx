@@ -23,7 +23,7 @@ const FooterSection = () => {
                 color: '#fff',
                 mt: 10,
                 px: { xs: 2, sm: 4, md: 8 },
-                py: { xs: 5, sm: 6, md: 8 }
+                py: { xs: 5, sm: 6, md: 4 }
             }}
         >
             <Container maxWidth="xl">
@@ -140,7 +140,7 @@ const FooterSection = () => {
                     </Grid>
                 </Grid>
 
-                <Divider sx={{ my: 4, bgcolor: 'rgba(255,255,255,0.4)' }} />
+                <Divider sx={{ my: 2, bgcolor: 'rgba(255,255,255,0.4)' }} />
 
                 <Typography
                     variant="body2"
