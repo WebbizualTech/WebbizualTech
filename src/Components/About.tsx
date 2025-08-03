@@ -3,14 +3,10 @@ import {
     Container,
     Grid,
     Typography,
-    useTheme,
-    useMediaQuery,
 } from '@mui/material';
-import AboutMainImg from '../assets/AboutMainImage.jpg'
+import AboutMainImg from '../assets/AboutMainImage.jpg';
 
 const AboutSection = () => {
-    const theme = useTheme();
-
     return (
         <Box
             sx={{
@@ -22,7 +18,7 @@ const AboutSection = () => {
             <Container maxWidth="lg">
                 <Grid container spacing={6} alignItems="center">
                     {/* LEFT: Image */}
-                    <Grid size={{ md: 6, sm: 6, xs: 12 }} sx={{ position: 'relative' }}>
+                    <Grid size={{ md: 6, xs: 12 }} sx={{ position: 'relative' }}>
                         <Box
                             component="img"
                             src={AboutMainImg}
@@ -75,7 +71,7 @@ const AboutSection = () => {
                             </Typography>
 
                             <Typography
-                                variant="body1" color='text.secondary'
+                                variant="body1"
                                 sx={{
                                     fontSize: { xs: '14px', sm: '15px', md: '16px' },
                                     fontFamily: 'Plus Jakarta Sans',
@@ -89,7 +85,7 @@ const AboutSection = () => {
                             </Typography>
 
                             <Typography
-                                variant="body1" color='text.secondary'
+                                variant="body1"
                                 sx={{
                                     fontSize: { xs: '14px', sm: '15px', md: '16px' },
                                     fontFamily: 'Plus Jakarta Sans',
@@ -105,7 +101,6 @@ const AboutSection = () => {
                 </Grid>
             </Container>
         </Box>
-
     );
 };
 

@@ -1,8 +1,6 @@
 import React from 'react';
 import {
-    Box, Typography, Grid, Card, Button, Container, Divider, useTheme,
-    useMediaQuery,
-    CardContent, CardMedia
+    Box, Typography, Grid, Card, Button, Container, Divider,
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import heroImage from "../assets/LandingPageImage.jpg";
@@ -20,6 +18,8 @@ import Footer from '../Components/Footer';
 import AboutSection from '../Components/About';
 import ProjectSection from "../Components/Project"
 import { FadeInOnView } from '../Components/FadeInOnView';
+import ResponsiveAppBar from '../Components/NavBar'
+import TopNavBar from '../Components/TopNavBar';
 
 const services = [
     {
@@ -101,38 +101,6 @@ const HoverContent = styled(Box)(() => ({
     width: '100%',
     maxWidth: '230px'
 }));
-type Project = {
-    title: string;
-    category: string;
-    description: string;
-    image: string;
-    ctaStyle: 'light' | 'dark';
-};
-
-
-const projects: Project[] = [
-    {
-        title: 'Stellar Tech Solutions',
-        category: 'Website Development',
-        description: "We helped Horizon Real Estate establish a trusted brand identity.",
-        image: portfolioImage,
-        ctaStyle: 'dark',
-    },
-    {
-        title: 'Green Wave Foods',
-        category: 'Website Development',
-        description: "We built a user-friendly Shopping platform for Green Wave Foods.",
-        image: portfolioImage,
-        ctaStyle: 'light',
-    },
-    {
-        title: 'Horizon Real Estate',
-        category: 'Website Development',
-        description: "We helped Horizon Real Estate establish a trusted brand identity.",
-        image: portfolioImage,
-        ctaStyle: 'dark',
-    },
-];
 
 interface FeatureItem {
     image: string;
@@ -165,9 +133,10 @@ const features: FeatureItem[] = [
 
 
 const HomePage: React.FC = () => {
-    const theme = useTheme();
     return (
         <>
+            <TopNavBar />
+            <ResponsiveAppBar />
             {/* HERO SECTION */}
             <Box
                 component="section"

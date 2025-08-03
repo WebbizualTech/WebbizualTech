@@ -1,11 +1,6 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { Box, Typography, Grid, Paper, Container } from '@mui/material';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination } from 'swiper/modules';
 import StarIcon from '@mui/icons-material/Star';
-import 'swiper/css';
-import 'swiper/css/pagination';
-import '../index.css';
 
 const testimonials = [
     {
@@ -25,37 +20,20 @@ const testimonials = [
         name: 'Stylehub Makeover',
         title: 'Graphic Designs Poster',
         rating: 5
-    },
-    {
-        quote: `They built a powerful e-commerce platform for our business with smooth navigation and secure checkout. Sales have increased since launch, truly impressed with their work.`,
-        name: 'Elevated Transmission',
-        title: 'Web Development',
-        rating: 4
-    },
+    }
 ];
 
-const TestimonialSlider = () => {
-    const swiperRef = useRef(null);
-    const prevMouseY = useRef(0);
-
-    const handleMouseEnter = (e: React.MouseEvent<HTMLDivElement>) => {
-        const currentY = e.clientY;
-        const direction = currentY > prevMouseY.current ? 'down' : 'up';
-
-        if (swiperRef.current) {
-            if (direction === 'down') {
-                swiperRef.current.slideNext();
-            } else {
-                swiperRef.current.slidePrev();
-            }
-        }
-
-        prevMouseY.current = currentY;
-    };
-
+const TestimonialSlider: React.FC = () => {
     return (
-        <Container maxWidth="xl" sx={{ px: { xs: 2, sm: 4, md: 6 }, py: { xs: 5, md: 5 }, bgcolor: 'rgba(31, 65, 174, 1)' }}>
-            <Grid container spacing={6} justifyContent='space-between'>
+        <Container
+            maxWidth="xl"
+            sx={{
+                px: { xs: 2, sm: 4, md: 6 },
+                py: { xs: 5, md: 5 },
+                bgcolor: 'rgba(31, 65, 174, 1)',
+            }}
+        >
+            <Grid container spacing={0} justifyContent="space-between" mb={5}>
                 <Grid size={{ md: 6, xs: 12 }}>
                     <Typography
                         variant="subtitle2"
@@ -101,131 +79,90 @@ const TestimonialSlider = () => {
                 </Grid>
             </Grid>
 
-            {/* Testimonial Swiper */}
-            <Box onMouseEnter={handleMouseEnter} sx={{ mt: { xs: 5, md: 3 }, position: 'relative' }}>
-                <Swiper
-                    onSwiper={(swiper) => {
-                        swiperRef.current = swiper;
-                    }}
-                    modules={[Pagination]}
-                    speed={600}
-                    spaceBetween={24}
-                    slidesPerView={1}
-                    pagination={{
-                        clickable: true,
-                        el: '.custom-swiper-pagination',
-                    }}
-                    breakpoints={{
-                        480: { slidesPerView: 1 },
-                        768: { slidesPerView: 2 },
-                        1200: { slidesPerView: 3.4 },
-                        1600: { slidesPerView: 4 },
-                    }}
-                    style={{ padding: '0 10px' }}
-                >
-                    {testimonials.map((item, index) => (
-                        <SwiperSlide
-                            key={index}
-                            style={{
+            <Grid container spacing={4}>
+                {testimonials.map((item, index) => (
+                    <Grid size={{ md: 4, sm: 6, xs: 12 }} key={index}>
+                        <Paper
+                            elevation={8}
+                            sx={{
+                                width: '100%',
+                                minHeight: 360,
                                 display: 'flex',
-                                alignItems: 'stretch',
-                                height: '100%',
+                                flexDirection: 'column',
+                                justifyContent: 'space-between',
+                                borderRadius: 4,
+                                p: 3,
+                                backgroundColor: '#fff',
                             }}
                         >
-                            <Paper
-                                elevation={8}
+                            <Typography
+                                variant="h3"
+                                fontWeight={700}
+                                color="#d1cfff"
                                 sx={{
-                                    width: '100%',
-                                    maxWidth: 480,
-                                    minHeight: 360,
-                                    display: 'flex',
-                                    flexDirection: 'column',
-                                    justifyContent: 'space-between',
-                                    borderRadius: 4,
-                                    p: 3,
-                                    flex: 1,
-                                    backgroundColor: '#fff',
+                                    fontSize: 100,
+                                    lineHeight: '70px',
+                                    mb: 1.5,
                                 }}
                             >
-                                {/* Top quote icon */}
+                                “
+                            </Typography>
+
+                            <Box sx={{ flexGrow: 1 }}>
                                 <Typography
-                                    variant="h3"
-                                    fontWeight={700}
-                                    color="#d1cfff"
+                                    variant="body1"
+                                    color="text.secondary"
                                     sx={{
-                                        fontSize: 100,
-                                        lineHeight: '70px',
-                                        mb: 1.5, // Reduced bottom margin
+                                        fontSize: 16,
+                                        fontFamily: 'Plus Jakarta Sans',
+                                        lineHeight: 1.6,
+                                        mb: 2,
                                     }}
                                 >
-                                    “
+                                    {item.quote}
                                 </Typography>
+                            </Box>
 
-                                {/* Main quote text */}
-                                <Box sx={{ flexGrow: 1 }}>
-                                    <Typography
-                                        variant="body1"
-                                        color="text.secondary"
+                            <Box display="flex" alignItems="center" mb={1}>
+                                {Array.from({ length: 5 }).map((_, i) => (
+                                    <StarIcon
+                                        key={i}
                                         sx={{
-                                            fontSize: 16,
-                                            fontFamily: 'Plus Jakarta Sans',
-                                            lineHeight: 1.6,
-                                            mb: 2,
+                                            color: i < item.rating ? '#ffb400' : '#ddd',
+                                            fontSize: 20,
+                                            mr: 0.5,
                                         }}
-                                    >
-                                        {item.quote}
-                                    </Typography>
-                                </Box>
+                                    />
+                                ))}
+                            </Box>
 
-                                {/* Star rating */}
-                                <Box display="flex" alignItems="center" mb={1}>
-                                    {Array.from({ length: 5 }).map((_, i) => (
-                                        <StarIcon
-                                            key={i}
-                                            sx={{
-                                                color: i < item.rating ? '#ffb400' : '#ddd',
-                                                fontSize: 20,
-                                                lineHeight: '1.5',
-                                                mr: 0.5,
-                                            }}
-                                        />
-                                    ))}
-                                </Box>
-
-                                {/* Name and title */}
-                                <Box>
-                                    <Typography
-                                        fontWeight={700}
-                                        sx={{
-                                            fontSize: 22,
-                                            color: 'rgba(31, 65, 174, 1)',
-                                            fontFamily: 'Plus Jakarta Sans',
-                                            lineHeight: 1.7,
-                                        }}
-                                    >
-                                        {item.name}
-                                    </Typography>
-                                    <Typography
-                                        variant="body2"
-                                        color="text.secondary"
-                                        sx={{
-                                            fontFamily: 'Plus Jakarta Sans',
-                                            lineHeight: 1.3,
-                                        }}
-                                    >
-                                        {item.title}
-                                    </Typography>
-                                </Box>
-                            </Paper>
-                        </SwiperSlide>
-
-                    ))}
-                </Swiper>
-
-                <Box sx={{ mt: 4 }}>
-                    <div className="custom-swiper-pagination" style={{ textAlign: 'center' }} />
-                </Box>
-            </Box>
+                            <Box>
+                                <Typography
+                                    fontWeight={700}
+                                    sx={{
+                                        fontSize: 22,
+                                        color: 'rgba(31, 65, 174, 1)',
+                                        fontFamily: 'Plus Jakarta Sans',
+                                        lineHeight: 1.7,
+                                    }}
+                                >
+                                    {item.name}
+                                </Typography>
+                                <Typography
+                                    variant="body2"
+                                    color="text.secondary"
+                                    sx={{
+                                        fontFamily: 'Plus Jakarta Sans',
+                                        lineHeight: 1.3,
+                                    }}
+                                >
+                                    {item.title}
+                                </Typography>
+                            </Box>
+                        </Paper>
+                    </Grid>
+                ))}
+            </Grid>
         </Container>
     );
 };

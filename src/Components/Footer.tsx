@@ -3,8 +3,8 @@ import {
     Container,
     Grid,
     Typography,
-    useMediaQuery,
-    useTheme,
+    // useMediaQuery,
+    // useTheme,
     Divider,
     Link
 } from '@mui/material';
@@ -12,8 +12,8 @@ import {
 import Logo from '../assets/WebbizualLogo.png';
 
 const FooterSection = () => {
-    const theme = useTheme();
-    const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+    // const theme = useTheme();
+    // const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
     return (
         <Box
