@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    box-sizing: border-box;
+    background-color: #fafafa;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    letter-spacing: 0.5px;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    overflow: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* WebKit (Chrome, Safari, Opera) */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    display: none;
+}
+
+/* testimonialSlider.css */
+
+.swiper-pagination {
+    bottom: 15px !important;
+    text-align: center;
+    background-color: none;
+}
+
+.swiper-pagination-bullet {
+    box-shadow: none;
+    background: none;
+    opacity: 1;
+    width: 10px;
+    height: 10px;
+    margin: 0 6px !important;
+    transition: all 0.3s ease;
+    border-radius: 50%;
+}
+
+.swiper-pagination-bullet-active {
+    background: #fff !important;
+    /* or use #333 for dark */
+    transform: scale(1.3);
+}
