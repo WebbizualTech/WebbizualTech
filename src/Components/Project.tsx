@@ -1,4 +1,3 @@
-import React from 'react';
 import { Box, Typography, Button, Container, Grid } from '@mui/material';
 
 import LukesLobster from '../assets/LukesLobster.jpeg';
